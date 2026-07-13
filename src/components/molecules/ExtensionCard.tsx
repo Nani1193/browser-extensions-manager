@@ -19,11 +19,11 @@ export default function ExtensionCard({
         <Icon
           src={logo}
           alt={name}
-          className="h-14 w-14 flex-shrink-0"
+          className="h-12 w-12 flex-shrink-0"
         />
 
         <div className="flex-1">
-          <h2 className="text-xl font-bold text-white">
+          <h2 className="text-lg font-bold text-white">
             {name}
           </h2>
 

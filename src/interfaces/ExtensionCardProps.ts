@@ -1,8 +1,6 @@
-export interface ExtensionCardProps {
-  logo: string;
-  name: string;
-  description: string;
-  isActive: boolean;
+import type { Extension } from "./Extension";
+
+export interface ExtensionCardProps extends Extension {
   onToggle: () => void;
   onRemove: () => void;
 }
