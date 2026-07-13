@@ -9,16 +9,12 @@ interface ExtensionsGridProps {
 export default function ExtensionsGrid({
   extensions,
 }: ExtensionsGridProps) {
-
   return (
-    <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
       {extensions.map((extension) => (
         <ExtensionCard
           key={extension.name}
-          logo={extension.logo}
-          name={extension.name}
-          description={extension.description}
-          isActive={extension.isActive}
+          {...extension}
           onToggle={() => {}}
           onRemove={() => {}}
         />
