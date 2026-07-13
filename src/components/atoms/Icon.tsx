@@ -1,8 +1,4 @@
-interface IconProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
+import type { IconProps } from "../../interfaces/IconProps";
 
 export default function Icon({
   src,

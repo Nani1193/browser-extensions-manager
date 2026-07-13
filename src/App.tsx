@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import ExtensionCard from "./components/molecules/ExtensionCard";
-
 import logo from "./assets/images/logo-devlens.svg";
 
 function App() {

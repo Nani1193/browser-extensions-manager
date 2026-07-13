@@ -1,12 +1,4 @@
-import type { ReactNode } from "react";
-
-interface ButtonProps {
-  children: ReactNode;
-  onClick?: () => void;
-  className?: string;
-  type?: "button" | "submit";
-  disabled?: boolean;
-}
+import type { ButtonProps } from "../../interfaces/ButtonProps";
 
 export default function Button({
   children,

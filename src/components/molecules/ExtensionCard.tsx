@@ -2,14 +2,7 @@ import Button from "../atoms/Button";
 import Icon from "../atoms/Icon";
 import Switch from "../atoms/Switch";
 
-interface ExtensionCardProps {
-  logo: string;
-  name: string;
-  description: string;
-  isActive: boolean;
-  onToggle: () => void;
-  onRemove: () => void;
-}
+import type { ExtensionCardProps } from "../../interfaces/ExtensionCardProps";
 
 export default function ExtensionCard({
   logo,

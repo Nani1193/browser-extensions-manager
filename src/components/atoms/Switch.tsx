@@ -1,7 +1,4 @@
-interface SwitchProps {
-  checked: boolean;
-  onChange: () => void;
-}
+import type { SwitchProps } from "../../interfaces/SwitchProps";
 
 export default function Switch({
   checked,
