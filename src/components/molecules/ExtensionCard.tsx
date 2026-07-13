@@ -23,7 +23,7 @@ export default function ExtensionCard({
         />
 
         <div className="flex-1">
-          <h2 className="text-xl font-bold text-white">
+          <h2 className="text-xl font-bold text-[var(--text-primary)]">
             {name}
           </h2>
 

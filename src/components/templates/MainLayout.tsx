@@ -11,6 +11,8 @@ interface MainLayoutProps {
   onFilterChange: (filter: Filter) => void;
   onToggle: (name: string) => void;
   onRemove: (name: string) => void;
+  isDarkMode: boolean;
+  onThemeToggle: () => void;
 }
 
 export default function MainLayout({
@@ -19,14 +21,19 @@ export default function MainLayout({
   onFilterChange,
   onToggle,
   onRemove,
+  isDarkMode,
+  onThemeToggle,
 }: MainLayoutProps) {
   return (
     <main className="min-h-screen px-4 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        <Header />
+        <Header
+            isDarkMode={isDarkMode}
+            onThemeToggle={onThemeToggle}
+        />
 
         <section className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <h1 className="text-4xl font-bold text-white">
+          <h1 className="text-4xl font-bold text-[var(--neutral-0)]">
             Extensions List
           </h1>
 

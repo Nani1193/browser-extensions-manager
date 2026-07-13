@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MainLayout from "./components/templates/MainLayout";
 
@@ -9,7 +9,7 @@ import type { Filter } from "./interfaces/Filter";
 
 function App() {
   const [extensions, setExtensions] = useState<Extension[]>(extensionsData);
-
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [filter, setFilter] = useState<Filter>("all");
 
   const handleToggle = (name: string) => {
@@ -45,15 +45,28 @@ function App() {
     return true;
   });
 
-  return (
-    <MainLayout
-      extensions={filteredExtensions}
-      filter={filter}
-      onFilterChange={setFilter}
-      onToggle={handleToggle}
-      onRemove={handleRemove}
-    />
+  const handleThemeToggle = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
+  useEffect(() => {
+  document.documentElement.classList.toggle(
+    "light",
+    !isDarkMode
   );
+}, [isDarkMode]);
+
+  return (
+  <MainLayout
+    extensions={filteredExtensions}
+    filter={filter}
+    onFilterChange={setFilter}
+    onToggle={handleToggle}
+    onRemove={handleRemove}
+    isDarkMode={isDarkMode}
+    onThemeToggle={handleThemeToggle}
+  />
+);
 }
 
 export default App;
