@@ -9,12 +9,14 @@ interface MainLayoutProps {
   extensions: Extension[];
   filter: Filter;
   onFilterChange: (filter: Filter) => void;
+  onToggle: (name: string) => void;
 }
 
 export default function MainLayout({
   extensions,
   filter,
   onFilterChange,
+  onToggle,
 }: MainLayoutProps) {
   return (
     <main className="min-h-screen px-4 py-10">
@@ -32,7 +34,10 @@ export default function MainLayout({
           />
         </section>
 
-        <ExtensionsGrid extensions={extensions} />
+        <ExtensionsGrid
+          extensions={extensions}
+          onToggle={onToggle}
+        />
       </div>
     </main>
   );

@@ -4,10 +4,12 @@ import type { Extension } from "../../interfaces/Extension";
 
 interface ExtensionsGridProps {
   extensions: Extension[];
+  onToggle: (name: string) => void;
 }
 
 export default function ExtensionsGrid({
   extensions,
+  onToggle,
 }: ExtensionsGridProps) {
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -15,7 +17,7 @@ export default function ExtensionsGrid({
         <ExtensionCard
           key={extension.name}
           {...extension}
-          onToggle={() => {}}
+          onToggle={() => onToggle(extension.name)}
           onRemove={() => {}}
         />
       ))}
