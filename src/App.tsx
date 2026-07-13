@@ -25,6 +25,14 @@ function App() {
     );
   };
 
+  const handleRemove = (name: string) => {
+    setExtensions((prevExtensions) =>
+      prevExtensions.filter(
+        (extension) => extension.name !== name
+      )
+    );
+  };
+
   const filteredExtensions = extensions.filter((extension) => {
     if (filter === "active") {
       return extension.isActive;
@@ -43,6 +51,7 @@ function App() {
       filter={filter}
       onFilterChange={setFilter}
       onToggle={handleToggle}
+      onRemove={handleRemove}
     />
   );
 }
