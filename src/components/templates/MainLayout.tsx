@@ -25,15 +25,15 @@ export default function MainLayout({
   onThemeToggle,
 }: MainLayoutProps) {
   return (
-    <main className="min-h-screen px-4 py-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
+    <main className="min-h-screen px-6 py-10">
+      <div className="mx-auto w-full max-w-[1180px]">
         <Header
-            isDarkMode={isDarkMode}
-            onThemeToggle={onThemeToggle}
+          isDarkMode={isDarkMode}
+          onThemeToggle={onThemeToggle}
         />
 
-        <section className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <h1 className="text-4xl font-bold text-[var(--neutral-0)]">
+        <section className="mt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <h1 className="text-[36px] font-bold text-[var(--text-primary)]">
             Extensions List
           </h1>
 
@@ -43,11 +43,13 @@ export default function MainLayout({
           />
         </section>
 
-        <ExtensionsGrid
-          extensions={extensions}
-          onToggle={onToggle}
-          onRemove={onRemove}
-        />
+        <div className="mt-8">
+          <ExtensionsGrid
+            extensions={extensions}
+            onToggle={onToggle}
+            onRemove={onRemove}
+          />
+        </div>
       </div>
     </main>
   );

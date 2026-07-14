@@ -13,30 +13,53 @@ export default function ExtensionCard({
   onRemove,
 }: ExtensionCardProps) {
   return (
-    <article className="flex flex-col justify-between rounded-2xl border border-[var(--neutral-700)] bg-[var(--neutral-800)] p-5 shadow-lg">
-
+    <article
+      className="
+        flex
+        h-[185px]
+        flex-col
+        justify-between
+        rounded-2xl
+        border
+        border-[var(--neutral-700)]
+        bg-[var(--neutral-800)]
+        p-5
+        transition-colors
+      "
+    >
       <div className="flex items-start gap-4">
         <Icon
           src={logo}
           alt={name}
-          className="h-14 w-14 flex-shrink-0"
+          className="h-12 w-12 shrink-0"
         />
 
-        <div className="flex-1">
-          <h2 className="text-xl font-bold text-[var(--text-primary)]">
+        <div>
+          <h2 className="text-[28px]/none font-bold text-[var(--text-primary)]">
             {name}
           </h2>
 
-          <p className="mt-2 text-sm leading-6 text-[var(--neutral-300)]">
+          <p className="mt-2 text-[15px] leading-6 text-[var(--neutral-300)]">
             {description}
           </p>
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <Button
           onClick={onRemove}
-          className="rounded-full border border-[var(--neutral-600)] px-4 py-2 text-sm text-white transition hover:bg-[var(--red-500)]"
+          className="
+            rounded-full
+            border
+            border-[var(--neutral-600)]
+            px-4
+            py-2
+            text-sm
+            text-[var(--text-primary)]
+            transition
+            hover:border-[var(--red-500)]
+            hover:bg-[var(--red-500)]
+          "
         >
           Remove
         </Button>
